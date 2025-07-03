@@ -74,7 +74,6 @@ def send_test_message(request):
     )
     return HttpResponse(f"Message sent! SID: {sid}")
 
-
 def is_hr(user):
     return user.groups.filter(name='HR').exists()
 
