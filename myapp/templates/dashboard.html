@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    
+    <title>PulseTrack HR Dashboard</title>
+    <script src="{% static 'https://cdn.jsdelivr.net/npm/chart.js' %}"></script>
+</head>
+<body>
+    <h1>Employee Sentiment Dashboard</h1>
+
+    <!-- Sentiment Trend Chart -->
+    <canvas id="sentimentChart" width="400" height="200"></canvas>
+
+    <!-- Top Issues -->
+    <div id="topicsChart"></div>
+
+    <script>
+        fetch('/api/feedback-data/')
+            .then(response => response.json())
+            .then(data => {
+                // Render sentiment trend chart
+                new Chart(document.getElementById('sentimentChart'), {
+                    type: 'line',
+                    data: {
+                        labels: data.dates,
+                        datasets: [{
+                            label: 'Avg. Daily Sentiment',
+                            data: data.sentiments,
+                            borderColor: 'blue'
+                        }]
+                    }
+                });
+
+                // Render topics bar chart
+                let topicsHTML = '<h3>Top Employee Concerns</h3><ul>';
+                data.topics.forEach(topic => {
+                    topicsHTML += `<li>${topic.name}: ${topic.count} mentions</li>`;
+                });
+                document.getElementById('topicsChart').innerHTML = topicsHTML;
+            });
+    </script>
+</body>
+</html>
