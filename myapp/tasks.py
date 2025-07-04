@@ -13,7 +13,7 @@ def send_scheduled_checkins():
     if today.weekday() == 0:  # Monday
         for config in FeedbackConfig.objects.all():
             frequency = config.frequency
-            if frequency == 'daily' or \
+            if frequency == 'biweekly' or \
                     (frequency == 'weekly') or \
                     (frequency == 'biweekly' and today.isocalendar()[1] % 2 == 0):
 

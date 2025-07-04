@@ -9,9 +9,9 @@ def send_whatsapp_message(to_number, template_variables):
     client = Client(account_sid, auth_token)
 
     message = client.messages.create(
-        content_sid='HXb5b62575e6e4ff6129ad7c8efe1f983e',  # Template SID
+        content_sid='HX0c0e20764be209438385b8bb9bb7ec59',  
         content_variables=json.dumps(template_variables),
         from_='whatsapp:+14155238886',  # Twilio sandbox number
-        to='whatsapp:+254748264302'
+        to=f'whatsapp:{to_number}'
     )
     return message.sid
