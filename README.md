@@ -1,8 +1,20 @@
+---
 
-# PulseTrack_bot – The bridge between your people and actionable insights.
+<div align="center">
+  <img src="https://img.shields.io/github/stars/Bra-yo/PulseTrack_bot?color=ff69b4&style=for-the-badge">
+  <img src="https://img.shields.io/github/forks/Bra-yo/PulseTrack_bot?color=00bfff&style=for-the-badge">
+  <img src="https://img.shields.io/github/license/Bra-yo/PulseTrack_bot?style=for-the-badge">
+</div>
+
+---
+# PulseTrack_bot
+
+Welcome to **PulseTrack_bot**!  
+<em>The Bridge between your people and actionable insights.</em>
+
+---
 **Author:** Brian Mutuku  
 **Role:** Bot Engineer / Integrations – PulseTrack Hackathon Project
-
 ---
 
 ## Overview
